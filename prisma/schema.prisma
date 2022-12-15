@@ -1,0 +1,23 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Requests {
+  id            String     @id @default(cuid())
+  status        String     @default("WAITING")
+  userName      String?
+  userEmail     String
+  imageName     String
+  imageUrl      String
+  videoUrl      String?
+  updatedAt     DateTime    @updatedAt
+  createdAt     DateTime    @default(now())
+}
