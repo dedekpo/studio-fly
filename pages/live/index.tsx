@@ -73,7 +73,8 @@ export default function Live() {
 						downloadMutation.mutate({
 							requestId: request.id,
 						});
-						// writeFile(fileHandler, files[0].value);
+						console.log("escrevendo arquivo");
+						writeFile(fileHandler, files[0].value);
 					}
 				});
 				// console.log(listRequest);
